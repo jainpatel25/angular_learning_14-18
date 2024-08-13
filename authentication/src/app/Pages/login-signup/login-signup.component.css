@@ -1,0 +1,167 @@
+/* Global Reset */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Background Shapes */
+.background {
+    position: absolute;
+    width: 450px;
+    height: 550px;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
+
+.shape:first-child {
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    width: 250px;
+    height: 250px;
+    top: -50px;
+    left: 180px;
+    margin-left:500px;
+}
+
+.shape:last-child {
+    background: linear-gradient(45deg, #24c6dc, #514a9d);
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Form Styling */
+form {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    z-index: 1;
+    margin-left:30%;
+    /* top:22%; */
+    margin-top:10%;
+}
+
+form h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+label {
+    display: block;
+    margin: 20px 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 14px;
+    font-weight: 300;
+    transition: border 0.3s ease;
+}
+
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: #888;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Register/Toggle Link */
+.register {
+    margin-top: 20px;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.register a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register a:hover {
+    color: #003f7f;
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: fadeIn 1s ease-in-out;
+}
