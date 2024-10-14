@@ -10,50 +10,73 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateComponent } from './components/forms/template/template.component';
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { GetApiComponent } from './components/API- HttpClient/get-api/get-api.component';
+import { PostApiComponent } from './components/API- HttpClient/post-api/post-api.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
+    //Default Router
     {
-        path:'add-emp',
-        component: AddEmployeeComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full' 
     },
     {
-        path: 'data-binding',
-        component: DataBindingComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: 'emp-list',
-        component: EmployeeListComponent
-    },
-    {
-        path: 'structural-dir',
-        component: StructuralDirComponent
-    },
-    {
-        path: 'attributedirective',
-        component: AttributeDirComponent
-    },
-    {
-        path: 'if-else',
-        component: IfelseComponent
-    },
-    {
-        path: 'for',
-        component: ForComponent
-    },
-    {
-        path: 'pipe',
-        component: PipeComponent
-    },
-    {
-        path: 'template',
-        component: TemplateComponent
-    },
-    {
-        path: 'reactive',
-        component: ReactiveComponent
-    },
-    {
-        path: 'get-api',
-        component: GetApiComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path:'add-emp',
+                component: AddEmployeeComponent
+            },
+            {
+                path: 'data-binding',
+                component: DataBindingComponent
+            },
+            {
+                path: 'emp-list',
+                component: EmployeeListComponent
+            },
+            {
+                path: 'structural-dir',
+                component: StructuralDirComponent
+            },
+            {
+                path: 'attributedirective',
+                component: AttributeDirComponent
+            },
+            {
+                path: 'if-else',
+                component: IfelseComponent
+            },
+            {
+                path: 'for',
+                component: ForComponent
+            },
+            {
+                path: 'pipe',
+                component: PipeComponent
+            },
+            {
+                path: 'template',
+                component: TemplateComponent
+            },
+            {
+                path: 'reactive',
+                component: ReactiveComponent
+            },
+            {
+                path: 'get-api',
+                component: GetApiComponent
+            },
+            {
+                path: 'post-api',
+                component: PostApiComponent
+            }
+        ]
     }
 ];
