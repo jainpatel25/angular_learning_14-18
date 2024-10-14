@@ -1,1 +1,28 @@
-<p>get-api works!</p>
+<app-alert [alertType]="'Success'" [message]="'Welcome to Get page'"></app-alert>
+<div class="row">
+    <div class="col-2">
+        <button class="btn btn-success me-2" (click)="getAllUser()">Get Users</button>
+        <button class="btn btn-success me-2" (click)="getDogPics()">Dog Pics</button>
+        <button class="btn btn-success me-2" (click)="getPokemon()">Pokemon GO</button>
+    </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for (item of userList; track $index) {
+                <option>{{item.name}}</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-5">
+        <img [src]="dogImages" alt="dog images" class="img-fluid rounded">
+    </div>
+</div>
+
+<div class="row mt-4">
+    {{pokemon| json}}
+    @for (item of data; track $index) {
+        <img [src]="'https://img.pokemondb.net/artwork/large/' + item + '.jpg'" alt="{{item}}">
+    }
+</div>
